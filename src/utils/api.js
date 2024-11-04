@@ -10,6 +10,7 @@ export async function charactersLoader(id){
 }
 
 export async function characterLoader(id){
+    const test = "test"
     const resCharacter = await getCharacter(id)
     if (!resCharacter || resCharacter.status !== 200 || !resCharacter.data) {
         throw createErrorResponse(
