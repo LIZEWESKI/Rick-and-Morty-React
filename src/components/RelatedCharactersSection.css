@@ -1,0 +1,175 @@
+.suggested-characters__title {
+    font-size: 1.8rem; /* Title size */
+}
+
+.suggested-characters-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 25px;
+    width: 200px; /* Ensure this width is specified */
+}
+
+.suggested-characters-card img {
+    width: 200px; /* Default image size */
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid var(--clr-border);
+    cursor: pointer;
+}
+
+.suggested-characters-name {
+    margin-top: 8px;
+    font-size: 1.2em; /* Name font size */
+    font-weight: var(--fw-bold);
+}
+
+/* Adjust the CSS to ensure Swiper works correctly */
+.swiper-container {
+    width: 100%; /* Make sure this is wide enough */
+    margin: 0 auto; /* Centering the container */
+}
+
+.swiper-slide {
+    width: 200px; /* or whatever width you need */
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: var(--clr-primary-1); /* Change to your desired color */
+    background-color: #181a1e97; /* Optional: add a background */
+    border-radius: 50%; /* Optional: make them round */
+    width: 40px; 
+    height: 40px;
+    padding: 10px;
+    transition: 300ms all;
+    border: 1px solid var(--clr-border);
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    border: 1px solid var(--clr-primary);
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 20px; /* Adjust font size for icons */
+}
+
+/* Hide arrows if there is not enough content */
+.swiper-button-next {
+    right: 10px; /* Positioning */
+}
+
+.swiper-button-prev {
+    left: 10px; /* Positioning */
+}
+
+/* Default bullet color */
+.swiper-pagination-bullet {
+    background: var(--clr-light); /* Change to your desired color for inactive bullets */
+    opacity: 0.7; /* Optional: Adjust opacity for inactive bullets */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Active bullet color */
+.swiper-pagination-bullet-active {
+    background: var(--clr-primary-1);
+}
+
+/* Optional: Hover effect on bullets */
+.swiper-pagination-bullet:hover {
+    background: var(--clr-primary-1);
+}
+
+/* Default scrollbar styles */
+.swiper-scrollbar {
+    background: var(--clr-bg); /* Background for the scrollbar track */
+    border-radius: 10px; /* Rounded corners */
+    height: 10px; /* Height of the scrollbar */
+    border: 1px solid var(--clr-bg);
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Draggable part of the scrollbar */
+.swiper-scrollbar-drag {
+    background: var(--clr-primary-1);
+    border-radius: 10px;
+}
+
+.swiper-scrollbar:hover, .swiper-scrollbar:hover:active {
+    background: var(--clr-light);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 720px) {
+    .suggested-characters__title {
+        font-size: 1.6rem; /* Slightly smaller title */
+    }
+
+    .suggested-characters-card {
+        width: 180px; /* Adjust card width */
+    }
+
+    .suggested-characters-card img {
+        width: 180px; /* Adjust image size */
+        height: 180px;
+    }
+
+    .suggested-characters-name {
+        font-size: 1.1em; /* Smaller name font */
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        width: 35px; /* Smaller button size */
+        height: 35px;
+    }
+}
+
+@media (max-width: 520px) {
+    .suggested-characters__title {
+        font-size: 1.4rem; /* Smaller title for very small screens */
+    }
+
+    .suggested-characters-card {
+        width: 160px; /* Further adjust card width */
+    }
+
+    .suggested-characters-card img {
+        width: 160px; /* Further adjust image size */
+        height: 160px;
+    }
+
+    .suggested-characters-name {
+        font-size: 1em; /* Adjust name font size */
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        width: 30px; /* Smaller button size */
+        height: 30px;
+    }
+}
+
+@media (max-width: 360px) {
+    .suggested-characters__title {
+        font-size: 1.2rem; /* Title size for small mobile devices */
+    }
+
+    .suggested-characters-card {
+        width: 140px; /* Smaller card width */
+    }
+
+    .suggested-characters-card img {
+        width: 140px; /* Smaller image size */
+        height: 140px;
+    }
+
+    .suggested-characters-name {
+        font-size: 0.9em; /* Smaller name font */
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        width: 25px; /* Smaller button size */
+        height: 25px;
+    }
+}
