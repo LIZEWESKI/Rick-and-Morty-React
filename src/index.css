@@ -4,10 +4,8 @@
 
 
 :root {
-  --clr-primary: #953147;
-  /* --clr-primary: #4c2d6c; */
-  --clr-primary-1: #d86e85;
-  /* --clr-primary-1: #b36cff; */
+  --clr-primary: #4c2d6c;
+  --clr-primary-1: #b36cff;
   --clr-primary-light: #ff5359;
   /* --clr-primary: #ff6c70; */
   /* --clr-primary-light: #cf112b; */
