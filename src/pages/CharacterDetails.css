@@ -70,7 +70,7 @@
 .character--details__generic-info > p {
     display: flex;
     align-items: center;
-    white-space: nowrap;
+    white-space: wrap;
 }
 .character--details__generic-info button {
     font-weight: 900;

@@ -10,8 +10,8 @@ export async  function loader({request}){
     const urlSP = new URL(request.url).searchParams;
     // urlSP.entries convert the data into an array, Object.fromEntries converts it into an object
     // with the format of Key / Value
-    const spObject = Object.fromEntries(urlSP.entries());
-    const res = await charactersLoader(spObject);
+    const spObject = Object.fromEntries(urlSP?.entries());
+    const res = await charactersLoader(spObject || "");
     if (!res || res.status === 404 || res.data.results.length === 0) {
         return { 
             results: [],
