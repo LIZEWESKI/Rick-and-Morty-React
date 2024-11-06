@@ -47,7 +47,11 @@
     width: auto;
 }
 /* Characters Styles */
-
+.loading--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .characters_main .feedback--message {
     font-size: 40px;
     text-align: center;

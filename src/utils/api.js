@@ -1,9 +1,16 @@
-
 import { getCharacter, getEpisode, getLocation, getCharacters} from 'rickmortyapi';
 
 export async function charactersLoader(id){
     const resCharacters = await getCharacters(id)
-    if (!resCharacters || resCharacters.status === 404 || !resCharacters.data) {
+    if (resCharacters.error === "There is nothing here" || resCharacters.status === 404) {
+        return { 
+            data: {
+                results: [],
+                message: `Burrrp! No matches, Jerry! Loosen up those filters and try again, or it's nada for you!`
+            } 
+        };
+    }
+    if (resCharacters.status >= 500) {
         throw createErrorResponse(
             "Sorry folks, um technical difficulties... We couldn't load Characters",
             resCharacters.status || 500,

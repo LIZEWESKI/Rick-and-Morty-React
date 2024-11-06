@@ -70,7 +70,6 @@
 .character--details__generic-info > p {
     display: flex;
     align-items: center;
-    /* white-space: wrap; */
     word-wrap: break-word; /* Breaks long words */
     overflow-wrap: break-word; 
 }

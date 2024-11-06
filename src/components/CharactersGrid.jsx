@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom';
 import CharacterCard from "./CharacterCard"
-const CharactersGrid = ({charactersData}) => {
-  const {info,results} = charactersData;
+const CharactersGrid = ({characterData}) => {
+  const {info,results} = characterData;
   const totalCharacters = info.count
   return (
     <>
@@ -21,7 +21,7 @@ function CharactersCount({totalCharacters}){
   const firstShown = lastShown - (charactersPerPage - 1);
   if(lastShown > totalCharacters) lastShown = totalCharacters 
     return (
-    <small>Showing {firstShown} - {lastShown} of <strong>{totalCharacters}</strong> </small>
+    <small>Showing {firstShown} - {lastShown} of <strong>{totalCharacters}</strong> {totalCharacters === 1 ? "Character" : "Characters"} </small>
   )
 }
 export default CharactersGrid
