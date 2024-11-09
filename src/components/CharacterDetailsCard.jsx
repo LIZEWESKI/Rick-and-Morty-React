@@ -1,6 +1,6 @@
 import React, { useContext, useState} from 'react'
 import { NavLink , Outlet, useLocation } from 'react-router-dom';
-import { AuthProtection } from './authProvider';
+import { AuthProtection } from './AuthProvider';
 import { FavCharsContext } from './FavCharsProvider';
 import capitalizeFirstLetter from '../utils/capitalFirstLetter';
 import Heart from "react-heart"

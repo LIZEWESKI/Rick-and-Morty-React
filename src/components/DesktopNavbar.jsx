@@ -2,7 +2,7 @@ import React , {useState,useEffect,useRef, useContext} from 'react'
 import {NavLink, Link,useLocation} from 'react-router-dom';
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { MdLogout } from "react-icons/md";
-import { AuthProtection } from './authProvider';
+import { AuthProtection } from './AuthProvider';
 const DesktopNavbar = () => {
     const {isLoggedIn,setIsLoggedIn} = useContext(AuthProtection)
     const location = useLocation();

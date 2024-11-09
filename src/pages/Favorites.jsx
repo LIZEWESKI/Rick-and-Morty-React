@@ -4,7 +4,7 @@ import FavCharacterCard from '../components/FavCharacterCard'
 import mutateResponseToRedirect from '../utils/mutateRedirect'
 import { FavCharsContext } from '../components/FavCharsProvider'
 import ScrollToTopButton from '../components/ScrollToTopButton';
-import { AuthProtection, setAuthStatus } from '../components/authProvider';
+import { AuthProtection, setAuthStatus } from '../components/AuthProvider';
 import "./Favorites.css"
 export function loader({request}){
   const isLog = JSON.parse(localStorage.getItem("auth"));

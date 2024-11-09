@@ -4,7 +4,7 @@ import { loginUser } from '../utils/api';
 import { Form, useActionData, useLoaderData,useNavigation} from 'react-router-dom';
 import mutateResponseToRedirect from '../utils/mutateRedirect';
 import ClipLoader from 'react-spinners/ClipLoader';
-import { setAuthStatus } from '../components/authProvider';
+import { setAuthStatus } from '../components/AuthProvider';
 import { FaRegCopy } from "react-icons/fa";
 export function loader({request}){
   const url = new URL(request.url)

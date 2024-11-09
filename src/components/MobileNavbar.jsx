@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { AuthProtection } from './authProvider';
+import { AuthProtection } from './AuthProvider';
 import { CiMenuFries } from 'react-icons/ci';
 import { IoCloseOutline } from 'react-icons/io5';
 import { RiArrowDropDownLine } from 'react-icons/ri';
