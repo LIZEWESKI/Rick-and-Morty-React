@@ -11,7 +11,7 @@ import Quiz from './pages/Quiz'
 import NotFound from "./pages/NotFound"
 import ErrorElement from './components/ErrorElement'
 import FavCharsProvider from './components/FavCharsProvider'
-import AuthProvider from './components/authProvider'
+import AuthProvider from './components/AuthProvider';
 import CharacterDetailsLocation from './components/CharacterDetailsLocation'
 import CharacterDetailsEp from './components/CharacterDetailsEp'
 const App = () => {
