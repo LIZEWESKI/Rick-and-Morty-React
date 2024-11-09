@@ -6,7 +6,7 @@
   align-items: center;
   gap: 0.7em;
   padding: var(--p-1);
-  background-image: url(../assets/rick-and-morty-banner.jpg);
+  background-image: url(../assets/rick-and-morty-banner.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

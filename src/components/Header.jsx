@@ -1,7 +1,7 @@
 import React from 'react'
 import { useMediaQuery } from 'react-responsive';
 import { Link} from 'react-router-dom'
-import Logo from "../assets/logo-brand.png"
+import Logo from "../assets/logo-brand.webp"
 import DesktopNavbar from './DesktopNavbar';
 import MobileNavbar from './MobileNavbar';
 import "./Header.css"

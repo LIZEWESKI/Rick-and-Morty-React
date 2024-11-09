@@ -9,6 +9,7 @@ import Characters , {loader as charactersLoader} from './pages/Characters';
 import CharacterDetails , {loader as characterDetailsLoader } from './pages/CharacterDetails'
 import Quiz from './pages/Quiz'
 import NotFound from "./pages/NotFound"
+import OnProduction from './pages/OnProduction'
 import ErrorElement from './components/ErrorElement'
 import FavCharsProvider from './components/FavCharsProvider'
 import AuthProvider from './components/AuthProvider';
@@ -20,6 +21,8 @@ const App = () => {
       <Route path='/' element={<Layout/>}>
         <Route index element={<Home/>}/>
         <Route path='characters' element={<Characters/>} loader={charactersLoader} errorElement={<ErrorElement/>}/>
+        <Route path='episodes' element={<OnProduction/>}/>
+        <Route path='locations' element={<OnProduction/>}/>
         <Route path='quiz' element={<Quiz/>} errorElement={<ErrorElement/>}/>
         <Route element={<FavCharsProvider/>} errorElement={<ErrorElement/>}>
           <Route path='favorites' element={<Favorites/>} loader={favoritesLoader}/>

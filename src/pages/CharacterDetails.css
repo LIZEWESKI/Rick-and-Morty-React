@@ -14,6 +14,7 @@
     align-items: center;
     gap: 0.3em;
     font-size: 1.3rem;
+    flex-wrap: wrap;
 }
 .character--details__main .breadcrumbs ul li {
     display: flex;
@@ -48,7 +49,6 @@
 .character--details__generic {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 2em;
     height: 100%;
 }
@@ -89,7 +89,7 @@
     padding: 6px;
     border-radius: 3px;
     color: var(--clr-white);
-    width: max-content;
+    width: fit-content;
     word-wrap: break-word; /* Breaks long words */
     overflow-wrap: break-word; 
 }
@@ -159,6 +159,7 @@
     .character--details__extra--info p {
         font-size: 0.9rem; /* Smaller paragraph text */
     }
+
 }
 @media(max-width: 520px){
     .character--details__main .breadcrumbs ul {
@@ -175,6 +176,9 @@
     }
     .character--details__extra--info b {
         font-size: 0.8rem;
+    }
+    .character--details__generic-info .character-details__favorite-icon .login--message {
+        font-size: 14px;
     }
 }
 @media (max-width: 360px) {
@@ -201,5 +205,8 @@
     .character--details__generic .character-image {
         width: 150px; /* Smaller image size */
         height: 150px;
+    }
+    .character--details__generic-info .character-details__favorite-icon .login--message {
+        font-size: 12px;
     }
 }

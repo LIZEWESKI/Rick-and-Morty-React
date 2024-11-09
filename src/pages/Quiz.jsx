@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import quizQuestions from "../utils/quizQuestions"
-import JerryImg from "../assets/Jerry-result.jpg"
+import JerryImg from "../assets/Jerry-result.webp"
 import "./Quiz.css"
 const Quiz = () => {
     const [isStarted,setIsStarted] = useState(false)
