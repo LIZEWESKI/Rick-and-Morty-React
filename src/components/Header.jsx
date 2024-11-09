@@ -15,7 +15,7 @@ const Header = () => {
           <img src={Logo} alt="logo" className='header_logo' />
         </Link>
       </div>
-      {!isMobile ? <DesktopNavbar/> : <MobileNavbar/>}
+      {!isMobile ? <DesktopNavbar/> :<MobileNavbar/>}
     </header>
   )
 }

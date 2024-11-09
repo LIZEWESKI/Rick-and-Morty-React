@@ -7,7 +7,7 @@ import RelatedCharactersSection from '../components/RelatedCharactersSection';
 import convertURLtoIds from '../utils/convertsURLtoIds';
 import renameFields from '../utils/renamingFields';
 import BreadCrumbs from '../components/BreadCrumbs';
-import ClipLoader from "react-spinners/ClipLoader";
+import LoadingFallBack from '../components/LoadingFallBack';
 import "./CharacterDetails.css"
 // for Ref!
 // export async function loader({params}){
@@ -132,20 +132,16 @@ export function loader({params}) {
 
 const CharacterDetails = () => {
     const characterPromise = useLoaderData();
-    console.log(characterPromise)
     return (
       <main className='character--details__main'>
-        <Suspense fallback={
-                <div className='loading--wrapper'>
-                    <ClipLoader size={150} aria-label="Loading Spinner" color="#b36cff"/>
-                </div>}>
+        <Suspense fallback={<LoadingFallBack/>}>
           <Await resolve={characterPromise.characterDetails}>
             {
               (characterDetails)=> {
                 const {characterData, residents, epCharacters} = characterDetails
                 return (
                   <>
-                    <BreadCrumbs characterName={characterData.name}/>
+                    <BreadCrumbs currentPath={characterData.name}/>
                     <CharacterDetailsCard characterData={characterData}/>
                     <RelatedCharactersSection data={characterDetails}/> 
                   </>

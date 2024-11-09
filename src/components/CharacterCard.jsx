@@ -19,9 +19,9 @@ const CharacterCard = ({character}) => {
                 <p className="limit-text-to-1-lines character_location--value">{capitalizeFirstLetter(character.location.name)}</p>
             </div>
         </div>
-        <button className="character_btn" >
-            <Link  to={`./${character.id}`} state={{sp : spState }} >View Character Details </Link>
-        </button>
+        <Link className="character_btn"  to={`./${character.id}`} state={{sp : spState }} >
+                View Character Details
+        </Link>
     </div>
   )
 }

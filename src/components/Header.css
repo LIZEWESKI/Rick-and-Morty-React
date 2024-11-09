@@ -20,21 +20,7 @@ header {
   width: 70px;
   padding: 0.5em;
 }
-.header_search-wrapper { 
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.header_search-wrapper svg {
-  position: absolute;
-  left: 5px;
-  width: 18px;
-  height: 18px;
-}
-.header_search-wrapper input {
-  padding-left: 1.9em;
-}
+
 .header_dropdown--wrapper {
   display: flex;
   justify-content: center;
@@ -75,6 +61,29 @@ header {
 .header_dropdown--wrapper svg.open, .header_collapsible--title svg.open {
   transform: rotate(180deg);
 }
+.header_rs--mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.header_rs ul li button, .header_rs--mobile button:first-child { 
+  background-color: var(--clr-primary-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 13px;
+}
+.header_rs ul li .logout--button, .header_rs--mobile li .logout--button {
+  background-color: var(--color-danger);
+}
+.header_rs ul li button:hover, .header_rs--mobile .logout--button:hover {
+  border: 2px solid transparent; 
+  opacity: 0.7;
+}
+
 /* Mobile Navbar */
 .header_menu--btn {
   display: flex;

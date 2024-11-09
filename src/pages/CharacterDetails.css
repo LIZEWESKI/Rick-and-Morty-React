@@ -48,8 +48,9 @@
 .character--details__generic {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     gap: 2em;
+    height: 100%;
 }
 .character--details__generic-info h1 {
     font-size: 2rem;
@@ -57,15 +58,17 @@
 .character--details__generic .character-image {
     width: 250px;
     height: 250px;
-    border-radius: 50%;
+    border-radius: 3px;
     margin-bottom: 10px;
-    border: 2px solid var(--clr-border);
+    border: 3px solid var(--clr-border);
 }
 .character--details__generic-info {
     display: flex;
     flex-direction: column;
-    
+    flex-grow: 1;
     gap: 0.7em;
+    height: 100%;
+    width: 100%;
 }
 .character--details__generic-info > p {
     display: flex;
@@ -73,18 +76,33 @@
     word-wrap: break-word; /* Breaks long words */
     overflow-wrap: break-word; 
 }
-.character--details__generic-info button {
-    font-weight: 900;
-    font-family: inherit;
-    padding: 0.5em 1.1em;
-    background-color: var(--clr-primary);
-    color: var(--clr-white);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 0;
+.character--details__generic-info .character-details__favorite-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    justify-content: center;
 }
-
+.character--details__generic-info .character-details__favorite-icon .login--message {
+    font-family: "Poppins",sans-serif;
+    font-weight: 700;
+    background-color: var(--card-clr-bg);
+    padding: 6px;
+    border-radius: 3px;
+    color: var(--clr-white);
+    width: max-content;
+    word-wrap: break-word; /* Breaks long words */
+    overflow-wrap: break-word; 
+}
+.character--details__generic-info .character-details__favorite-icon .login--message span {
+    color: var(--clr-white);
+    font-style: italic;
+}
+.custom-heart {
+    transition: transform 0.2s ease-in-out, color 0.2s ease;
+    width: 2em;
+    cursor: pointer;
+}
+  
 .character--details__card-wrapper ul {
     display: flex;
     align-items: center;
@@ -127,7 +145,6 @@
     .character--details__generic .character-image {
         width: 170px;
         height: 170px;
-        border-radius: 50%;
         margin-bottom: 10px;
     }
     .character--details__main .breadcrumbs ul {

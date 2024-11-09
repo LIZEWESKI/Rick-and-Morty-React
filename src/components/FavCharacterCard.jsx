@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
+import { FavCharsContext } from './FavCharsProvider';
 import { FaRegTrashAlt } from "react-icons/fa";
 import capitalizeFirstLetter from '../utils/capitalFirstLetter';
-
 const FavCharacterCard = ({ character }) => {
   const {
     id,
@@ -17,13 +17,16 @@ const FavCharacterCard = ({ character }) => {
     episodeName,
     episode
   } = character;
-
+  // to Delete Favorites Characters
+  const {setFavChars} = useContext(FavCharsContext)
   const classNameStatus = status.toLowerCase()
-
+  function deleteFavChar(id){
+    setFavChars(prevChar => prevChar.filter(char => char.id !== id ))
+  }
   return (
     <div className="fav-character_card">
       <div className="fav-character_img">
-        <button className="remove-character__btn">
+        <button className="remove-character__btn" onClick={()=> deleteFavChar(id)}>
           <FaRegTrashAlt/>
         </button>
         <Link to={`/characters/${id}`}>

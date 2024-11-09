@@ -6,7 +6,7 @@
 :root {
   --clr-primary: #4c2d6c;
   --clr-primary-1: #b36cff;
-  --clr-primary-light: #ff5359;
+  --clr-primary-light: #213d6d;
   /* --clr-primary: #ff6c70; */
   /* --clr-primary-light: #cf112b; */
   --clr-secondary: #4066a8;
@@ -21,7 +21,7 @@
   --clr-bg: #121212;
   --card-clr-bg: #383838;
   --clr-border: #28292b;
-  --ff-base: 'Inter',"Karla", sans-serif;
+  --ff-base: "Poppins", 'Inter',"Karla", sans-serif;
   --fw-regular: 400;
   --fw-bold: 700;
   --card-p: 1.8rem;

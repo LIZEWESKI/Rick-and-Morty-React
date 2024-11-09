@@ -6,7 +6,7 @@ import FilterComponent from '../components/FilterComponent'
 import CharactersGrid from '../components/CharactersGrid';
 import Pagination from '../components/Pagination';
 import ScrollToTopButton from '../components/ScrollToTopButton';
-import ClipLoader from "react-spinners/ClipLoader";
+import LoadingFallBack from '../components/LoadingFallBack';
 export function loader({request}){
     const urlSP = new URL(request.url).searchParams;
     // urlSP.entries convert the data into an array, Object.fromEntries converts it into an object
@@ -36,10 +36,7 @@ const Characters = () => {
         <main className='characters_main'>
             <h1 className='characters_title'>Characters Cards</h1>
             <FilterComponent/>
-            <Suspense fallback={
-                <div className='loading--wrapper'>
-                    <ClipLoader size={150} aria-label="Loading Spinner" color="#b36cff"/>
-                </div>}>
+            <Suspense fallback={<LoadingFallBack/>}>
                 <Await resolve={charactersPromise.charactersData}>
                     {(charactersData)=> renderCharacters(charactersData.data)}
                 </Await>

@@ -2,7 +2,7 @@ import React from 'react'
 import { RiArrowRightSFill } from "react-icons/ri";
 import { useLocation,NavLink } from 'react-router-dom';
 
-const BreadCrumbs = ({characterName}) => {
+const BreadCrumbs = ({currentPath}) => {
     const location = useLocation();
     const redirectSP = `?${location.state?.sp}` || ""
   return (
@@ -13,10 +13,14 @@ const BreadCrumbs = ({characterName}) => {
               <RiArrowRightSFill size={20}/>
             </li> 
             <li>
+              <NavLink to={`/favorites`}>Favorites</NavLink>
+              <RiArrowRightSFill size={20}/>
+            </li> 
+            <li>
               <NavLink to={`/characters${redirectSP}`}>Characters</NavLink>
               <RiArrowRightSFill size={20}/>
             </li> 
-            <li className='limit-text-to-1-lines' >{characterName}</li> 
+            <li className='limit-text-to-1-lines' >{currentPath}</li> 
           </ul>
     </div>
   )

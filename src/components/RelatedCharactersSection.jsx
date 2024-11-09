@@ -40,7 +40,7 @@ const RelatedCharactersSection = ({ data }) => {
                             >
                                 {category.characters.map((character) => (
                                     <SwiperSlide key={character.id}>
-                                        <div className="suggested-characters-card" onClick={()=> console.log(character.name)}>
+                                        <div className="suggested-characters-card">
                                             <NavLink to={`/characters/${character.id}`} state={{sp : spState }}>
                                                 <img 
                                                     src={character.image} 

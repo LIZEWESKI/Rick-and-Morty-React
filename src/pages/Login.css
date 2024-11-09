@@ -1,0 +1,114 @@
+.login__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-bg);
+    height: 80vh; /* Full height of the viewport */
+    padding: 1em;
+    text-align: center;
+    font-family: "Poppins",sans-serif;
+}
+
+.login__main h1 {
+    font-size: 32px; /* Increase font size */
+    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 700; /* Make heading bold */
+    pointer-events: none;
+}
+.login__main .warning--message {
+    color: var(--color-warning);
+}
+.account-wrapper {
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    font-family: "Poppins",sans-serif;
+    justify-content: center;
+    text-align: start;
+    margin-bottom: 10px;
+}
+.account-wrapper .copy--account-info {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    font-family: "Poppins",sans-serif;
+    width: 250px;
+}
+.account-wrapper .copy--account-info .copy--clipboard__wrapper {
+    font-family: "Poppins",sans-serif;
+    display: flex;
+    gap: 0.4em;
+    font-weight: 500;
+    background-color: var(--card-clr-bg);
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+.login__main form  {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+    max-width: 400px; /* Maximum width for the form */
+}
+
+.login__main input  {
+    width: 100%;
+    border: 2px solid var(--clr-border);
+}
+.login__main input:hover,.login__main input:focus{
+    border: 2px solid var(--clr-primary);
+}
+
+.login__main button {
+    padding: 0.5em;
+    background-color: var(--clr-primary-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s; 
+    margin-block: 20px; 
+}
+
+.login__main button:disabled {
+    background-color: #aaaaaa;
+}
+.login__main .form__err-message {
+    color: var(--color-danger);
+    font-weight: var(--fw-bold);
+}
+
+.login__main .signup-prompt {
+    font-weight: var(--fw-bold);
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login__main .signup-prompt a {
+    color: var(--clr-primary-light);
+    font-weight: 700;
+}
+
+.login__main .signup-prompt a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 500px) {
+    .login__main h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+}

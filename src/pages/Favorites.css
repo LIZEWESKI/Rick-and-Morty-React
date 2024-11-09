@@ -3,6 +3,11 @@
     padding: var(--p-1);
     font-family: "Poppins",sans-serif;
 }
+.favorites__main > h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    pointer-events: none;
+}
 .empty-characters__wrapper {
     display: flex;
     flex-direction: column;
@@ -32,10 +37,6 @@
   
 .empty-characters__wrapper button:hover {
     background-color: var(--color-primary-1);
-}
-.favorites__main > h1 {
-    text-align: center;
-    margin-bottom: 10px;
 }
 
 .characters-grid { 
