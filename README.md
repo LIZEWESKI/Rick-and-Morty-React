@@ -19,5 +19,5 @@ A feature-rich React application using the [Rick and Morty API](https://rickandm
 
 - **React** for UI
 - **React Router** for page navigation
-- **React Query** or fetch API for data handling
+- **React Query** for fetch API for data handling
 - **Swiper** for carousels
