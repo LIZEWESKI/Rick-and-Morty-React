@@ -1,7 +1,7 @@
 # Rick and Morty React Project
 
 A feature-rich React application using the [Rick and Morty API](https://rickandmortyapi.com/). This app displays information about characters, episodes, and locations, with interactive components like a quiz and a favorites list (with auth).
-🔗 [Rick and Morty React][(https://rickandmortyapi.com/](https://darth-ram.netlify.app/))
+🔗 [Rick and Morty React](https://rickandmortyapi.com/](https://darth-ram.netlify.app/)
 ---
 
 ## 🚀 Features
