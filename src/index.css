@@ -10,8 +10,6 @@
   --clr-primary: #4c2d6c;
   --clr-primary-1: #b36cff;
   --clr-primary-light: #cf112b;
-  /* --clr-primary: #ff6c70; */
-  /* --clr-primary-light: #cf112b; */
   --clr-secondary: #4066a8;
   --clr-white: #e3e3e3;
   --clr-white-variant: #a3bdcc;
@@ -61,7 +59,9 @@
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
+  --success: oklch(71.76% 0.1902 149.6);
+  --success-foreground: oklch(98.38% 0.0035 247.86);
+  --destructive: oklch(56.56% 0.1949 26.07);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
@@ -99,6 +99,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);

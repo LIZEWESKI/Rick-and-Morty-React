@@ -6,7 +6,7 @@ export async function charactersLoader(id){
         return { 
             data: {
                 results: [],
-                message: `Burrrp! No matches, Jerry! Loosen up those filters and try again, or it's nada for you!`
+                message: `Loosen up those filters, or it's nada for you!`
             } 
         };
     }
@@ -46,22 +46,6 @@ export async function locationLoader(id){
             resLocation.statusText)
     }
     return resLocation;
-}
-export async function loginUser(creds) {
-    const res = await fetch("/api/login",
-        { method: "post", body: JSON.stringify(creds) }
-    )
-    const data = await res.json()
-
-    if (!res.ok) {
-        throw {
-            message: data.message,
-            statusText: res.statusText,
-            status: res.status
-        }
-    }
-
-    return data
 }
 export function createErrorResponse(message, status, statusText) {
     const response = new Response(null, {

@@ -1,34 +1,26 @@
-import React, { useContext, useState} from 'react'
+import React, { useContext} from 'react'
 import { NavLink , Outlet, useLocation } from 'react-router-dom';
-import { AuthProtection } from './AuthProvider';
 import { FavCharsContext } from './FavCharsProvider';
 import capitalizeFirstLetter from '../utils/capitalFirstLetter';
 import Heart from "react-heart"
 
 const CharacterDetailsCard = ({characterData}) => {
     const location = useLocation()
-    const {isLoggedIn,setIsLoggedIn} = useContext(AuthProtection)
-    const [toggleLoginMessage, setToggleLoginMessage] = useState(false)
     const spState = location.state?.sp || "";
     const classNameStatus = characterData.status.toLowerCase()
     // to Add favorites Characters
     const {favChars,setFavChars} = useContext(FavCharsContext)
     const isAlreadyFavorite = isLoggedIn ? favChars.some(prevChar => prevChar.id === characterData.id) : false || false;
     function addFavChar(char){
-      if(isLoggedIn){
-        setFavChars(prevChars=> {
-          // if it exist delete it
-          if(isAlreadyFavorite) {
-            return prevChars.filter(prevChar => prevChar.id !== char.id )
-          } else {
-            // else add it
-            return [char,...prevChars]
-          }
-        })
-      }else {
-        setToggleLoginMessage(true)
-        setTimeout(() => setToggleLoginMessage(false), 2000);
-      }
+      setFavChars(prevChars=> {
+        // if it exist delete it
+        if(isAlreadyFavorite) {
+          return prevChars.filter(prevChar => prevChar.id !== char.id )
+        } else {
+          // else add it
+          return [char,...prevChars]
+        }
+      })
     }
   return (
     <div className="character--details__container">
@@ -57,7 +49,6 @@ const CharacterDetailsCard = ({characterData}) => {
                       className="custom-heart"
                       style={{ transition: 'all 300ms ease-in-out', cursor: 'pointer' }}
                     />
-                    {toggleLoginMessage && <p className='login--message'>This isn’t <span>Mad Max</span>, Jerry! Log in!</p>}
                 </div>
               </div>
             </div>

@@ -1,7 +1,6 @@
 import { Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 const Footer = () => {
-  const year = new Date().getFullYear()
   return (
     <footer className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex justify-between items-center md:px-20 p-4">
       <p className="text-sm text-muted-foreground">
@@ -17,7 +16,4 @@ const Footer = () => {
     </footer>
   )
 }
-
 export default Footer
-{/* <p> &copy;  {year} The Rick and Morty Cards. All rights reserved.</p>
-<p>This collection's design and content are owned by The Rick and Morty Cards, with images and data sourced externally.</p> */}
