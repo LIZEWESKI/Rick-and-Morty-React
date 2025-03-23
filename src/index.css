@@ -5,8 +5,8 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
-:root {
+/* For ref */
+/* :root {
   --clr-primary: #4c2d6c;
   --clr-primary-1: #b36cff;
   --clr-primary-light: #cf112b;
@@ -28,7 +28,7 @@
   --card-p: 1.8rem;
   --p-1: 1.2rem;
   --radius: 0.625rem;
-}
+} */
 ::-webkit-scrollbar{
   width: 3px;
 }
@@ -61,7 +61,7 @@
   --accent-foreground: oklch(0.985 0 0);
   --success: oklch(71.76% 0.1902 149.6);
   --success-foreground: oklch(98.38% 0.0035 247.86);
-  --destructive: oklch(56.56% 0.1949 26.07);
+  --destructive: oklch(63.75% 0.254752 12.2981);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
@@ -78,6 +78,7 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --radius: 0.500rem;
 }
 
 @theme inline {

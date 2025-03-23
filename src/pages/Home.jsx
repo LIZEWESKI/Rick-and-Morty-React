@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import { Sparkles, Users, Brain } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import Banner from '../assets/rick-and-morty-banner.webp'
 const Home = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
