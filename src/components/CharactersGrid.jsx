@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom"
-import CharacterCard from "./characterCard"
+import CharacterCard from "./CharacterCard"
 
 const CharactersGrid = ({ characterData }) => {
   const { info, results } = characterData
