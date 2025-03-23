@@ -4,7 +4,9 @@ import './index.css'
 import App from './App.jsx'
 import '@fontsource/inter';
 import { injectSpeedInsights } from '@vercel/speed-insights';
+import { inject } from '@vercel/analytics';
 
+inject();
 injectSpeedInsights();
 createRoot(document.getElementById('root')).render(
   <StrictMode>
