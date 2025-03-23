@@ -7,9 +7,13 @@ const Layout = () => {
   return (
     <>
       <ScrollToTop />
-      <Header/>
-      <Outlet/>
-      <Footer/>
+      <div className='flex flex-col h-screen w-full min-h-screen '>
+        <Header/>
+        <main className='flex flex-col flex-grow'>
+          <Outlet/>
+        </main>
+        <Footer/>
+      </div>
     </>
   )
 }

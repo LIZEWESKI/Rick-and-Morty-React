@@ -1,65 +1,85 @@
-import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation'; 
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import "./RelatedCharactersSection.css";
-const RelatedCharactersSection = ({ data }) => {
-    const { characterData, epCharacters, residents } = data;
-    const location = useLocation()
-    const spState = location.state?.sp || "";
-    const relatedCategories = [
-        { label: "Appears in Same Episodes", characters: epCharacters },
-        { label: "Residents", characters: residents }
-    ];
-    return (
-        <>
-            {relatedCategories.map(category => (
-                category.characters.length !== 0 && (
-                    <section key={category.label} className="suggested-characters">
-                        <h1 className="suggested-characters__title">
-                            {category.label === "Residents" 
-                                ? `Residents of ${characterData.locationName || "the Same Location"}` 
-                                : category.label 
-                            }
-                        </h1>
-                        <div style={{ position: 'relative', marginBottom: '45px' , padding: "10px"}}>
-                            <Swiper
-                                modules={[Navigation, Pagination, Scrollbar, A11y]}
-                                className="swiper-container"
-                                spaceBetween={20}
-                                slidesPerView={"auto"}
-                                centerInsufficientSlides={true}
-                                loop={category.characters.length > 7}
-                                navigation
-                                pagination={{ clickable: true }}
-                                scrollbar={{ draggable: true }}
-                            >
-                                {category.characters.map((character) => (
-                                    <SwiperSlide key={character.id}>
-                                        <div className="suggested-characters-card">
-                                            <NavLink to={`/characters/${character.id}`} state={{sp : spState }}>
-                                                <img 
-                                                    src={character.image} 
-                                                    alt={character.name} 
-                                                    loading="lazy" 
-                                                    className="suggested-characters-image" 
-                                                />
-                                            </NavLink>
-                                            <h3 className="suggested-characters-name limit-text-to-1-lines">{character.name}</h3>
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </div>
-                    </section>
-                )
-            ))}
-        </>
-    );
-};
+import { Link, useLocation } from "react-router-dom"
+import { Users, MapPin } from "lucide-react"
 
-export default RelatedCharactersSection;
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+
+const RelatedCharactersSection = ({ data }) => {
+  const { characterData, epCharacters, residents } = data
+  const location = useLocation()
+  const spState = location.state?.sp || ""
+
+  const relatedCategories = [
+    {
+      id: "episodes",
+      label: "Appears in Same Episodes",
+      characters: epCharacters,
+      icon: <Users className="h-5 w-5" />,
+    },
+    {
+      id: "residents",
+      label: `Residents of ${characterData.locationName || "the Same Location"}`,
+      characters: residents,
+      icon: <MapPin className="h-5 w-5" />,
+    },
+  ]
+
+  return (
+    <div className="space-y-8">
+      {relatedCategories.map(
+        (category) =>
+          category.characters.length > 0 && (
+            <section key={category.id}>
+              <div className="mb-6 flex items-center justify-start gap-2">
+                {category.icon}
+                <h2 className="text-2xl font-bold tracking-tight">{category.label}</h2>
+              </div>
+              <CharacterCarousel characters={category.characters} spState={spState} />
+            </section>
+          ),
+      )}
+    </div>
+  )
+}
+
+const CharacterCarousel = ({ characters, spState }) => {
+  return (
+    <Carousel
+      opts={{
+        align: "start",
+        loop: characters.length > 5,
+      }}
+      className="mx-auto w-full max-w-5xl"
+    >
+      <CarouselContent>
+        {characters.map((character) => (
+          <CarouselItem key={character.id} className="basis-1/3 md:basis-1/5 lg:basis-1/6">
+            <Link
+              to={`/characters/${character.id}`}
+              state={{ sp: spState }}
+              className="block transition-transform hover:scale-105"
+            >
+              <div className="flex flex-col items-center gap-2 p-1">
+                <div className="overflow-hidden rounded-full border-2 border-primary/20 p-1">
+                  <img
+                    src={character.image || "/placeholder.svg"}
+                    alt={character.name}
+                    loading="lazy"
+                    className="aspect-square h-24 w-24 rounded-full object-cover sm:h-32 sm:w-32"
+                  />
+                </div>
+                <h3 className="line-clamp-1 max-w-full text-center text-sm font-medium">{character.name}</h3>
+              </div>
+            </Link>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <div className="flex justify-center gap-2 pt-4">
+        <CarouselPrevious className="relative inset-auto translate-y-0 cursor-pointer" />
+        <CarouselNext className="relative inset-auto translate-y-0 cursor-pointer" />
+      </div>
+    </Carousel>
+  )
+}
+
+export default RelatedCharactersSection
+
