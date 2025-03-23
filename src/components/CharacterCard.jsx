@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
-import { SpContext } from "../pages/characters"
+import { SpContext } from "../pages/Characters"
 import { MapPin, ExternalLink } from "lucide-react"
 import capitalizeFirstLetter from "../utils/capitalFirstLetter"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"

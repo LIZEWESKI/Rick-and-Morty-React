@@ -1,6 +1,4 @@
-"use client"
 import { useSearchParams } from "react-router-dom"
-
 import {
   Pagination,
   PaginationContent,
