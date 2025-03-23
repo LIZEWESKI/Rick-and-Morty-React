@@ -12,8 +12,6 @@ A feature-rich React application using the [Rick and Morty API](https://rickandm
 - **Characters**: Filterable list with detailed character pages
 - **Quiz**: Rick and Morty-themed personality quiz
 - **Favorites**: Auth-based list for favorite characters
-- **Locations and Episodes**: Coming soon
-
 ---
 
 ## 🛠️ Tech Stack

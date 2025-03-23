@@ -10,16 +10,15 @@ const Home = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${Banner})`,
+          backgroundImage: `url()`,
           filter: "brightness(0.1)",
         }}
       />
-
       {/* Animated portal effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-60 animate-pulse" />
 
       {/* Content */}
-      <main className="container relative z-10 flex flex-col items-center justify-center px-4 py-24 text-center md:py-32">
+      <main className="container relative z-10 flex flex-col items-center justify-center px-4 py-12 text-center md:py-16">
         <Badge variant="outline" className="mb-4 animate-fade-in">
           <Sparkles className="mr-1 h-3 w-3" />
           <span>Wubba Lubba Dub Dub!</span>

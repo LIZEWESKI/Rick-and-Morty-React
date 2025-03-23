@@ -97,7 +97,7 @@ const CharactersPagination = ({ info }) => {
               <PaginationLink
                 onClick={() => handlePageChange(page)}
                 isActive={page === currentPage}
-                className="cursor-pointer"
+                className={`cursor-pointer ${page === currentPage && "bg-primary-foreground"}`}
               >
                 {page}
               </PaginationLink>
