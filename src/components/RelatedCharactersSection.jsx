@@ -24,7 +24,7 @@ const RelatedCharactersSection = ({ data }) => {
   ]
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-4">
       {relatedCategories.map(
         (category) =>
           category.characters.length > 0 && (
@@ -52,7 +52,7 @@ const CharacterCarousel = ({ characters, spState }) => {
     >
       <CarouselContent>
         {characters.map((character) => (
-          <CarouselItem key={character.id} className="basis-1/3 md:basis-1/5 lg:basis-1/6">
+          <CarouselItem key={character.id} className="basis-1/2 md:basis-1/5 lg:basis-1/6">
             <Link
               to={`/characters/${character.id}`}
               state={{ sp: spState }}

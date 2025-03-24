@@ -20,7 +20,10 @@ const Quiz = () => {
   const handleAnswerClick = (index) => {
     setSelectedAnswer(index)
     setIsLoading(true)
-
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
     // Simulate loading to prevent image flashing issues
     setTimeout(() => {
       setIsLoading(false)

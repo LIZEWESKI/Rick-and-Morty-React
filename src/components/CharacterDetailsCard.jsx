@@ -51,8 +51,8 @@ const CharacterDetailsCard = ({ characterData }) => {
     <div className="mx-auto mb-16 max-w-3xl rounded-xl border border-border/50 bg-card/30 backdrop-blur">
       <div className="flex flex-col md:flex-row">
         {/* Character Image */}
-        <div className="relative mx-auto md:mx-0">
-          <div className="relative aspect-square h-full w-full max-w-[300px] overflow-hidden rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
+        <div className="relative md:mx-0">
+          <div className="relative aspect-square h-full w-full max-w-content overflow-hidden rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
             <img
               src={characterData.image || "/placeholder.svg"}
               alt={characterData.name}

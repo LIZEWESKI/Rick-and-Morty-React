@@ -108,7 +108,7 @@ const FilterComponent = () => {
               </Select>
             ))}
           </div>
-          <div className="flex gap-6 flex-row-reverse">
+          <div className="flex flex-wrap gap-4">
             <div className="flex justify-end">
                 <Button type="submit" className="gap-2">
                 <Filter className="h-4 w-4" />

@@ -36,7 +36,7 @@ const Characters = () => {
   }
 
   return (
-    <main className="container mx-auto p-12 md:p-8">
+    <main className="container mx-auto p-6 md:p-8">
       <div className="mb-8 flex flex-col items-center justify-center space-y-2 text-center">
         <Badge variant="outline" className="mb-2">
           <Sparkles className="mr-1 h-3 w-3" />

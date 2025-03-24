@@ -1,5 +1,5 @@
-import { Suspense } from "react"
-import { useLoaderData, defer, Await } from "react-router-dom"
+import { Suspense, useEffect, useRef } from "react"
+import { useLoaderData, defer, Await, useLocation } from "react-router-dom"
 import { characterLoader, episodeLoader, locationLoader } from "../utils/api"
 import { Sparkles } from "lucide-react"
 
@@ -84,6 +84,18 @@ export function loader({ params }) {
 
 const CharacterDetails = () => {
   const characterPromise = useLoaderData()
+  const scrollRef = useRef(0); 
+  const location = useLocation(); 
+
+  useEffect(() => {
+    window.scrollTo(0, scrollRef.current);
+  }, [location.pathname]); 
+
+  useEffect(() => {
+    return () => {
+      scrollRef.current = window.scrollY;
+    };
+  }, [location.pathname]);
 
   return (
     <main className="min-h-screen bg-background pb-16">
