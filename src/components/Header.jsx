@@ -14,8 +14,8 @@ const Header = () => {
     setOpen(false);
   }
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:px-20 px-4">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:px-20 px-4 ">
+      <div className="container h-16 max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
             <div className="relative h-10 w-10 overflow-hidden rounded-full bg-primary/10">
@@ -26,7 +26,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex">
+        <nav className="hidden ml-auto md:flex">
           <ul className="flex items-center gap-6">
             <NavItem
               to="/characters"

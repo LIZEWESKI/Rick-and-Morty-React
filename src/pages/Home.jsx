@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 const Home = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden flex flex-col justify-center items-center">
       {/* Background with overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
